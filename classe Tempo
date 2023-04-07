@@ -1,23 +1,42 @@
-class Tempo{ 
-  var hora:Double = 0.0 
-  var min:Double = 0.0 
-  var segs:Double = 0.0
+class Tempo(var horas:Int = 0,var min:Int = 0,var segundos:Int = 0){
+
+
+    constructor(horas: Int ,min: Int) : this(
+        0,
+        0,
+        0
+    )
+
+    fun contTempo(horas: Int =0,min: Int= 0,segundos: Int= 0 ) = horas
+
+    fun imprimirHora(horas: Int,min: Int,segundos: Int){
+        println("$horas:$min:$segundos")
+    }
+
+
+    fun somaTempo(horas: Int) :Int {
+        return horas
+    }
+}
+
+
+fun main(){
+
+    println("------ CONTAGEM DE HORAS,SEGUNDO E MINUTOS -----")
+    println("00 ATÉ 12 -> A.M.")
+    println("13 ATÉ 23:59 -> P.M.")
+    println()
+
+    val tempoA = Tempo()
+    println("--- 1 TEMPO ---")
+    tempoA.imprimirHora(2,33,19)
+    //println("     ${tempoA.horas}:${tempoA.min}:${tempoA.segundos}")
+    println("--------------------")
+
+    val tempoB = Tempo()
+    println("--- 2 TEMPO ---")
+    tempoA.imprimirHora(3,44,33)
+    println("--------------------")
 
 }
 
-/*
-Veja que acima nos temos apenas a estrutura da classe formada, e precisamos instanciar a mesma.
-E para isso é preciso fazer a chamada da classe Tempo() dentro da função principal do nosso código.
-*//
-
-fun main(){ 
-  var tempoA = Tempo()  
-  tempoA.hora = 1.5 
-  println(tempoA.hora)
-
-}
-
-*/
-Agora a classe foi instanciada e armazenada dentro de uma variável chamada tempoA (bem criativo kkkk), 
-e a partir disso foi criado um objeto onde através dele será possível acessar as propriedades da classe assim como chamar os métodos.
-*/
